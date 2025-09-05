@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 #define MAX_SIZE 100
+#define REGISTRO int
 
 typedef struct
 {
-    int pilha[MAX_SIZE];
+    REGISTRO pilha[MAX_SIZE];
     int topo;
 } Pilha;
 
-void push(Pilha *p, int n)
+void push(Pilha *p, REGISTRO n)
 {
     if (p->topo < MAX_SIZE - 1)
     {
@@ -18,11 +19,19 @@ void push(Pilha *p, int n)
     return;
 }
 
+void pop_res(Pilha *p, REGISTRO* reg)
+{
+    if (p->topo > -1)
+    {
+        *reg = p->pilha[p->topo];
+        p->topo--;
+    }
+}
+
 void pop(Pilha *p)
 {
     if (p->topo > -1)
     {
-        p->pilha[p->topo] = 0;
         p->topo--;
     }
 }
@@ -36,7 +45,7 @@ void percorre(Pilha *p)
 {
     for (int i = 0; i <= p->topo; i++)
     {
-        printf("Indice %d: %d\n", i, p->pilha[i]);
+        printf("%d\n", p->pilha[i]);
     }
 }
 
@@ -44,7 +53,7 @@ void percorreLIFO(Pilha *p)
 {
     for (int i = p->topo; i > -1; i--)
     {
-        printf("Indice %d: %d\n", i, p->pilha[i]);
+        printf("%d\n", p->pilha[i]);
     }
 }
 
