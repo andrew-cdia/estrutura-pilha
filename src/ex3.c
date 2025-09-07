@@ -5,13 +5,13 @@ int main()
 {
     int n;
 
+    printf("Tamanho: ");
+    scanf("%d", &n);
+
     if (n > MAX_SIZE)
     {
         return 1;
     }
-
-    printf("Tamanho: ");
-    scanf("%d", n);
 
     Pilha p = init_pilha();
 

@@ -37,10 +37,10 @@ int main()
 
     while (!pilhaVazia(&p))
     {
+        binary *= 10;
         pop_res(&p, &resto);
         binary += resto;
-        binary *= 10;
     }
 
-    printf(binary);
+    printf("%d\n", binary);
 }

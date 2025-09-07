@@ -5,7 +5,7 @@
 int main()
 {
     char expressao[50];
-    scanf("%c", &expressao);
+    gets(expressao);
     char *ptr = &expressao;
 
     Pilha p = init_pilha();
@@ -20,6 +20,7 @@ int main()
         {
             pop(&p);
         }
+        ptr++;
     }
 
     if (len(&p) == 0)

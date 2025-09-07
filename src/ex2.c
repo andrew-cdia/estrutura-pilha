@@ -25,3 +25,5 @@ bool excluirElementoPilha(Pilha* p, REGISTRO* reg)
 
     return true;
 }
+
+int main(){}

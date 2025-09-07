@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "pilha.h"
 
 typedef int bool;
@@ -25,3 +26,5 @@ bool inserirElementoPilha(Pilha *p, REGISTRO reg)
 
     return true;
 }
+
+int main(){}
